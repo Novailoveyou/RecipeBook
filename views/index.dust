@@ -1,0 +1,22 @@
+{>"layout" /} 
+{<body} 
+  {#recipes}
+    <li class="single-recipe">
+      <div class="collapsible-header">{name}</div>
+      <div class="collapsible-body">
+        <span>Ingredients: {ingredients}</span><br><br>
+        <span> Directions: {directions}</span><br><br>
+
+        <a href="#edit-form-modal" 
+            data-id="{id}" 
+            data-name="{name}" 
+            data-ingredients="{ingredients}" 
+            data-directions="{directions}" 
+            class="edit-recipe-btn waves-effect waves-light btn blue lighten-1 modal-trigger">
+            Edit</a>
+
+        <a class="delete-recipe-btn waves-effect waves-light btn red lighten-2" data-id="{id}">Delete</a>
+      </div>
+    </li>
+  {/recipes} 
+{/body}

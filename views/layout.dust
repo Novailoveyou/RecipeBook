@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/css/materialize.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>RecipeBook</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <a class="waves-effect waves-light btn modal-trigger btn-add-recipe"
+            href="#add-form-modal"
+          >
+            Add Recipe
+          </a>
+        </div>
+        <div class="col s12">
+          <ul class="collapsible popout">
+            {+body /}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Form Modal -->
+    <div id="add-form-modal" class="modal">
+      <div class="modal-content">
+        <h4>Add Recipe</h4>
+        <form method="post" action="/add">
+          <div class="input-field col s12">
+            <textarea id="recipe-name"
+              class="materialize-textarea"
+              name="name"
+            ></textarea>
+            <label for="recipe-name">Recipe Name</label>
+          </div>
+          <div class="input-field col s12">
+            <textarea id="recipe-ingredients"
+              class="materialize-textarea"
+              name="ingredients"
+            ></textarea>
+            <label for="recipe-ingredients">Ingredients</label>
+          </div>
+          <div class="input-field col s12">
+            <textarea id="recipe-directions"
+              class="materialize-textarea"
+              name="directions"
+            ></textarea>
+            <label for="recipe-directions">Directions</label>
+          </div>
+
+          <input type="submit"
+            class="input-save modal-close waves-effect waves-light btn blue lighten-1"
+            value="Save"
+          />
+
+          <a href="#!"
+            class="modal-close waves-effect waves-light btn red lighten-2"
+            >Close</a
+          >
+        </form>
+      </div>
+    </div>
+
+    <!-- Edit Form Modal -->
+    <div id="edit-form-modal" class="modal">
+      <div class="modal-content">
+        <h4>Edit Recipe</h4>
+        <form method="post" action="/edit">
+          <input type="hidden" id="edit-form-id" name="id" />
+          <div class="input-field col s12">
+            <textarea id="edit-recipe-name"
+              class="materialize-textarea"
+              name="name"
+            ></textarea>
+            <label for="edit-recipe-name">Recipe Name</label>
+          </div>
+          <div class="input-field col s12">
+            <textarea id="edit-recipe-ingredients"
+              class="materialize-textarea"
+              name="ingredients"
+            ></textarea>
+            <label for="edit-recipe-ingredients">Ingredients</label>
+          </div>
+          <div class="input-field col s12">
+            <textarea id="edit-recipe-directions"
+              class="materialize-textarea"
+              name="directions"
+            ></textarea>
+            <label for="edit-recipe-directions">Directions</label>
+          </div>
+
+          <input type="submit"
+            class="input-save modal-close waves-effect waves-light btn blue lighten-1"
+            value="Save"
+          />
+
+          <a href="#!"
+            class="modal-close waves-effect waves-light btn red lighten-2"
+            >Close</a
+          >
+        </form>
+      </div>
+    </div>
+
+    <script src="/js/materialize.min.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
